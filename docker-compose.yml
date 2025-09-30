@@ -1,0 +1,17 @@
+version: '3.8' # Use a recent version
+services:
+  db:
+    image: postgres:16
+    container_name: tunez_db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+# Define the persistent volume
+volumes:
+  postgres_data:

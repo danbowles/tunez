@@ -35,4 +35,8 @@ defmodule Tunez.Music.Artist do
 
     attribute :biography, :string
   end
+
+  relationships do
+    has_many :albums, Tunez.Music.Album
+  end
 end

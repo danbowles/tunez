@@ -1,6 +1,10 @@
 defmodule Tunez.Music do
   use Ash.Domain, otp_app: :tunez, extensions: [AshPhoenix]
 
+  forms do
+    form :create_album, args: [:artist_id]
+  end
+
   resources do
     resource Tunez.Music.Album do
       define :create_album, action: :create
